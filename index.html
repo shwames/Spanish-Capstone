@@ -102,6 +102,28 @@
     .work-content p { min-height: 45px; margin: 0; color: var(--muted); font-size: 13px; }
     .work-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; padding-top: 13px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
     .work-meta a { color: var(--green); font-weight: 750; text-decoration: none; }
+    .portfolio-sections { display: grid; gap: 16px; }
+    .portfolio-section { display: grid; grid-template-columns: 54px 1fr; gap: 20px; padding: 26px; border: 1px solid var(--line); border-radius: 20px; background: var(--white); scroll-margin-top: 92px; }
+    .portfolio-number { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 15px; color: var(--green); background: #e9eedb; font-family: Georgia, serif; font-size: 20px; }
+    .portfolio-main .kicker { margin-top: 0; }
+    .portfolio-main h3 { margin: 0 0 8px; font-family: Georgia, serif; font-size: 26px; font-weight: 500; line-height: 1.2; }
+    .portfolio-description { max-width: 800px; margin: 0; color: var(--muted); font-size: 14px; }
+    .artifact-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 18px; padding-top: 15px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    .button.small { padding: 9px 14px; font-size: 12px; }
+    .reflection { margin-top: 15px; border-radius: 14px; background: #f4f5ee; }
+    .reflection summary { padding: 13px 16px; color: var(--green); font-size: 13px; font-weight: 750; cursor: pointer; }
+    .reflection-copy { padding: 0 16px 16px; color: #4e5c53; font-size: 14px; line-height: 1.75; }
+    .reflection-copy p { margin: 0 0 13px; }
+    .reflection-copy p:last-child { margin-bottom: 0; }
+    .culture-artifact { margin: 18px 0 12px; padding: 14px; border: 1px solid var(--line); border-radius: 16px; background: #f4f5ee; }
+    .culture-artifact img { display: block; width: min(100%, 320px); max-height: 590px; margin: 0 auto; object-fit: contain; border-radius: 8px; }
+    .culture-artifact figcaption { max-width: 620px; margin: 11px auto 0; color: var(--muted); font-size: 12px; text-align: center; }
+    .culture-artifact figcaption a, .context-sources a { color: var(--green); font-weight: 700; }
+    .context-sources { padding-top: 11px; border-top: 1px solid var(--line); font-size: 12px; }
+    .pending-tag { padding: 6px 10px; border-radius: 999px; color: #81503f; background: #f5e4db; font-size: 11px; font-weight: 750; }
+    .note-inner { max-width: 780px; text-align: center; }
+    .note-inner .section-title { margin-bottom: 12px; }
+    .note-inner > p:not(.kicker) { max-width: 620px; margin: 0 auto 20px; color: var(--muted); }
     .journey-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
     .journey-card { padding: 27px; border: 1px solid var(--line); border-radius: 20px; background: var(--white); }
     .journey-top { display: flex; justify-content: space-between; align-items: start; gap: 18px; }
@@ -132,8 +154,108 @@
       .hero-grid { grid-template-columns: 1fr .78fr; gap: 12px; }
       .hero-art { transform: scale(.88); transform-origin: center right; }
       .work-grid { grid-template-columns: repeat(2, 1fr); }
+      .portfolio-section { grid-template-columns: 42px 1fr; gap: 14px; padding: 21px; }
       .about-panel { gap: 24px; }
     }
+
+    /* 1990s personal-site theme */
+    * { border-radius: 0 !important; }
+    body {
+      color: #101020;
+      background-color: #000066;
+      background-image: radial-gradient(circle, #ffff00 1px, transparent 2px), radial-gradient(circle, #00ffff 1px, transparent 2px), radial-gradient(circle, #ff66ff 1px, transparent 2px);
+      background-size: 47px 47px, 71px 71px, 103px 103px;
+      background-position: 0 0, 18px 31px, 53px 9px;
+      font-family: Verdana, Arial, sans-serif;
+    }
+    .wrap { width: min(940px, calc(100% - 28px)); }
+    .topbar {
+      position: relative; top: auto;
+      background: #c0c0c0;
+      backdrop-filter: none;
+      border-bottom: 4px ridge #ffffff;
+    }
+    .nav { min-height: 64px; }
+    .brand { color: #000080; font-family: "Times New Roman", serif; font-size: 16px; text-decoration: underline; }
+    .brand-mark { border: 2px outset #fff; background: #ff00ff; color: #000080; font-family: "Times New Roman", serif; font-weight: bold; }
+    .nav-links { gap: 8px; }
+    .nav-links a, .nav-cta {
+      padding: 7px 9px;
+      color: #0000ee !important;
+      background: #d4d0c8;
+      border: 2px outset #fff;
+      border-radius: 0;
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 12px;
+      text-decoration: underline;
+    }
+    .nav-links a:hover, .nav-cta:hover { color: #ff00ff !important; background: #ffff00; }
+    .retro-ribbon { overflow: hidden; padding: 7px 0; color: #00ff00; background: #000000; border-bottom: 3px ridge #c0c0c0; font-family: "Courier New", monospace; font-size: 13px; font-weight: bold; white-space: nowrap; }
+    .retro-ribbon-track { width: max-content; animation: retro-scroll 26s linear infinite; }
+    .retro-ribbon span { padding-right: 36px; }
+    @keyframes retro-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    main { max-width: 1000px; margin: 0 auto; background: #fffef2; border-right: 5px ridge #00ffff; border-left: 5px ridge #00ffff; }
+    .hero { padding: 52px 0 42px; background: #dfffff; border-bottom: 5px ridge #ff00ff; }
+    .eyebrow { color: #000080; background: #ffff00; border: 2px solid #000080; font-family: "Courier New", monospace; }
+    .eyebrow span { background: #ff0000; }
+    h1 { color: #000080; font-family: "Times New Roman", serif; font-weight: bold; letter-spacing: 0; text-shadow: 2px 2px #00ffff; }
+    h1 em { color: #cc0066; font-style: normal; text-decoration: underline; }
+    .hero-copy, .section-intro { color: #202040; }
+    .button, .filter {
+      padding: 10px 14px;
+      color: #0000ee;
+      background: #c0c0c0;
+      border: 3px outset #ffffff;
+      border-radius: 0;
+      box-shadow: none;
+      font-family: Verdana, Arial, sans-serif;
+      text-decoration: underline;
+    }
+    .button:hover, .filter:hover, .filter.active { transform: none; color: #ff00ff; background: #ffff00; border-style: inset; }
+    .button.secondary { color: #0000ee; background: #c0c0c0; }
+    .hero-art { min-height: 340px; }
+    .sun { background: #ff66ff; border: 3px solid #000080; }
+    .paper-card { border: 3px solid #000080; background: #ffffcc; box-shadow: 7px 7px 0 #ff00ff; }
+    .paper-card.back { border: 3px solid #000080; background: #ccffff; box-shadow: none; }
+    .paper-card h2, .section-title, .about-panel h3, .portfolio-main h3, .journey-card h3 { font-family: "Times New Roman", serif; font-weight: bold; letter-spacing: 0; }
+    .paper-card h2 { color: #000080; }
+    .paper-card p, .work-content p, .journey-card p { color: #303050; }
+    .floating-note { border: 2px outset #fff; background: #ffff00; box-shadow: 4px 4px 0 #000080; }
+    .section { padding: 54px 0; }
+    .section:nth-of-type(odd) { background: #fffef2; }
+    .section:nth-of-type(even) { background: #e8e8ff; }
+    .section-head { padding-bottom: 12px; border-bottom: 3px double #cc0066; }
+    .kicker { display: inline-block; padding: 3px 6px; color: #ffffff; background: #000080; font-family: "Courier New", monospace; letter-spacing: .04em; }
+    h2.section-title { color: #000080; text-decoration: underline; }
+    .about-panel { border: 3px ridge #000080; background: #ccff99; }
+    .about-panel p { color: #102030; }
+    .stat { border: 2px inset #fff; background: #ffffcc; }
+    .stat strong { color: #cc0066; font-family: "Times New Roman", serif; font-weight: bold; }
+    .works { background: #e8e8ff !important; }
+    .filter-row { border-bottom: 2px dotted #000080; padding-bottom: 12px; }
+    .portfolio-section { border: 3px ridge #000080; background: #ffffff; box-shadow: 6px 6px 0 #8080ff; }
+    .portfolio-number { border: 2px solid #000080; color: #000080; background: #ffff00; font-family: "Courier New", monospace; font-weight: bold; }
+    .portfolio-main h3 { color: #800080; }
+    .portfolio-description, .artifact-row { color: #202040; }
+    .artifact-row { border-top: 2px dotted #666699; }
+    .reflection { border: 2px solid #000080; background: #ffffcc; }
+    .reflection summary { color: #0000ee; text-decoration: underline; }
+    .reflection-copy { color: #111122; }
+    .culture-artifact { border: 3px ridge #000080; background: #eeeeee; }
+    .culture-artifact img { border: 2px solid #000000; }
+    .culture-artifact figcaption { color: #202040; }
+    .context-sources { border-color: #000080; }
+    .journey-card, .quote { border: 3px ridge #000080; border-radius: 0; }
+    .quote { color: #ffffff; background: #000080; }
+    .quote blockquote { font-family: "Times New Roman", serif; }
+    .contact { color: #000080; background: #ff66ff; border-top: 5px ridge #ffffff; }
+    .contact p { color: #202040; }
+    .contact .button { color: #0000ee; border: 3px outset #ffffff; background: #c0c0c0; }
+    footer { color: #ffffff; background: #000000; border-top: 4px ridge #c0c0c0; }
+    footer a { color: #00ffff; text-decoration: underline; }
+    .retro-badge { display: inline-block; padding: 4px 7px; color: #000000; background: #00ff00; border: 2px outset #fff; font-family: "Courier New", monospace; font-size: 10px; font-weight: bold; }
+    @media (prefers-reduced-motion: reduce) { .retro-ribbon-track { animation: none; } }
+
     @media (max-width: 620px) {
       .wrap { width: min(100% - 32px, 520px); }
       .nav { min-height: 64px; }
@@ -152,6 +274,9 @@
       .stat strong { font-size: 21px; }
       .stat span { font-size: 10px; }
       .work-grid, .journey-grid { grid-template-columns: 1fr; }
+      .portfolio-section { grid-template-columns: 1fr; gap: 12px; padding: 20px; }
+      .portfolio-main h3 { font-size: 23px; }
+      .artifact-row { align-items: flex-start; }
       .progress-item { grid-template-columns: 95px 1fr 30px; }
       .contact-inner { display: block; }
       .contact .button { margin-top: 22px; }
@@ -166,11 +291,14 @@
       <a class="brand" href="#inicio"><span class="brand-mark">L</span><span>PORTAFOLIO <span style="color:var(--coral)">·</span> ESPAÑOL</span></a>
       <div class="nav-links">
         <a href="#sobre-mi">Sobre mí</a>
-        <a href="#trabajos">Mis trabajos</a>
-        <a href="#progreso">Mi progreso</a>
+        <a href="#argumento">Argumento</a>
+        <a href="#investigacion">Investigación</a>
+        <a href="#cultura">Cultura</a>
+        <a href="#progreso">Mi formación</a>
         <a class="nav-cta" href="#contacto">Contacto ↗</a>
       </div>
     </nav>
+    <div class="retro-ribbon" aria-label="Welcome banner"><div class="retro-ribbon-track"><span>★ WELCOME TO JAMES CALL'S SPANISH PORTFOLIO ★ ARGUMENT • INVESTIGATION • CULTURE •</span><span>★ WELCOME TO JAMES CALL'S SPANISH PORTFOLIO ★ ARGUMENT • INVESTIGATION • CULTURE •</span></div></div>
   </header>
 
   <main>
@@ -179,7 +307,7 @@
         <div>
           <div class="eyebrow"><span></span> Mi camino con el español</div>
           <h1>Aprender un idioma es <em>abrir una puerta.</em></h1>
-          <p class="hero-copy">Hola, soy <strong>[Tu nombre]</strong>. Este es mi portafolio: un espacio para guardar mis proyectos, compartir lo que he aprendido y mostrar cómo voy creciendo en español.</p>
+          <p class="hero-copy">Hola, soy <strong>James Call</strong>. Este portafolio reúne trabajos y reflexiones de mi formación como estudiante de español en BYU: argumentación, investigación y experiencias culturales.</p>
           <div class="hero-actions">
             <a class="button" href="#trabajos">Explorar mis trabajos <span aria-hidden="true">↓</span></a>
             <a class="button secondary" href="#sobre-mi">Conóceme</a>
@@ -210,12 +338,12 @@
         <div class="about-panel">
           <h3>“Cada palabra nueva me ayuda a ver el mundo de otra manera.”</h3>
           <div>
-            <p>Me llamo <strong>[Tu nombre]</strong> y estudio español en <strong>[Nombre del curso o universidad]</strong>. En este sitio comparto algunos proyectos del curso y reflexiones sobre mi aprendizaje.</p>
-            <p>Me interesa aprender español porque <strong>[escribe aquí tu motivo]</strong>. Una meta que tengo para este semestre es <strong>[escribe aquí una meta]</strong>.</p>
+            <p>Me llamo <strong>James Call</strong> y estudio español en <strong>Brigham Young University</strong>. En este sitio comparto proyectos y reflexiones de mi aprendizaje.</p>
+            <p>Quiero mejorar mi español antes de estudiar derecho para poder ejercer mi profesión y trabajar con personas hispanohablantes.</p>
             <div class="stats">
-              <div class="stat"><strong>[XX]</strong><span>proyectos compartidos</span></div>
-              <div class="stat"><strong>[X]</strong><span>semestre de español</span></div>
-              <div class="stat"><strong>¡Sí!</strong><span>ganas de seguir aprendiendo</span></div>
+              <div class="stat"><strong>3</strong><span>artefactos compartidos</span></div>
+              <div class="stat"><strong>BYU</strong><span>estudios de español</span></div>
+              <div class="stat"><strong>Derecho</strong><span>meta profesional</span></div>
             </div>
           </div>
         </div>
@@ -225,66 +353,50 @@
     <section class="section works" id="trabajos">
       <div class="wrap">
         <div class="section-head">
-          <div><p class="kicker">Una selección de mi curso</p><h2 class="section-title">Mis trabajos</h2></div>
-          <p class="section-intro">Cambia estas tarjetas por tus ensayos, presentaciones, grabaciones, lecturas u otros proyectos.</p>
+          <div><p class="kicker">Portafolio de español · BYU</p><h2 class="section-title">Mis trabajos</h2></div>
+          <p class="section-intro">Tres áreas de aprendizaje, cada una con un artefacto y una reflexión que conecta el trabajo con mis metas como estudiante de español.</p>
         </div>
-        <div class="filter-row" aria-label="Filtrar proyectos">
-          <button class="filter active" data-filter="todos">Todos</button>
-          <button class="filter" data-filter="escritura">Escritura</button>
-          <button class="filter" data-filter="oral">Expresión oral</button>
-          <button class="filter" data-filter="cultura">Cultura</button>
-        </div>
-        <div class="work-grid">
-          <article class="work-card" data-category="escritura">
-            <div class="work-cover cover-1"><span class="cover-type">Escritura</span></div>
-            <div class="work-content"><h3>[Título del ensayo]</h3><p>Una breve descripción del tema, la idea principal y lo que aprendí al escribirlo.</p><div class="work-meta"><span>[Mes · Año]</span><a href="#contacto">Ver proyecto ↗</a></div></div>
+        <div class="portfolio-sections">
+          <article class="portfolio-section" id="argumento">
+            <div class="portfolio-number">01</div>
+            <div class="portfolio-main">
+              <p class="kicker">Argumentative paper</p>
+              <h3>The power of poetic devices in Quevedo's “¡Ah de la vida!”</h3>
+              <p class="portfolio-description">This essay argues that the sonnet's ordered form intensifies its chaotic reflections on time and mortality. It supports that reading through analysis of the poem's structure, paradoxes, metaphors, and progression.</p>
+              <div class="artifact-row"><span>SPAN 330 · February 2025</span><a class="button small" href="artifacts/span-330-quevedo-poetry-essay.docx" download>Download paper ↓</a></div>
+              <details class="reflection"><summary>Read my reflection</summary><div class="reflection-copy"><p>I chose this essay because it gives a clear example of making an interpretive claim and supporting it through close reading. The paper argues that Quevedo's tightly ordered sonnet form creates tension with its unsettling ideas about time, death, and the instability of human life. I do not simply summarize the poem; I explain how its structure and language shape its meaning. The essay follows that claim through the sonnet's form, paradox, metaphor, and progression of ideas. For example, I discuss the paradox of being both present and already a “difunto,” and I connect the image of life as a passing river or shadow to the poem's concern with time. Those examples show why I selected this artifact for the argumentative section: it demonstrates an effort to defend a specific reading of a literary work with evidence from the text.</p><p>Working on this essay helped me practice the steps involved in building an argument in Spanish. I had to decide what the poem was doing beyond its topic, state that interpretation in a thesis, choose details that supported it, and explain how each detail connected to the larger claim. I also practiced using literary vocabulary to describe form and rhetorical choices. This matters because an academic argument needs more than an opinion; the writer has to make the reasoning visible to readers who may interpret the poem differently. The essay gave me practice explaining why a formal feature matters instead of naming it and moving on.</p><p>As a Spanish major at BYU, I have developed more confidence reading literary texts closely and discussing how their language works. I am learning to notice structure, sound, imagery, and ambiguity, then turn those observations into a focused interpretation. Writing about Quevedo also made me think about how Spanish academic vocabulary can help me express an idea precisely. At the same time, this artifact reminds me that my writing can continue to improve. I want to check spelling and grammar carefully, use consistent names and accents, and make sure every quotation is accurate and clearly integrated. I also want to distinguish more clearly between what the poem explicitly says and what I infer from it, so that readers can follow the evidence behind my interpretation.</p><p>I plan to keep developing these skills by writing more analyses of Spanish-language literature and by revising each paper for both argument and language. In future work, I want to make my thesis even more specific, organize paragraphs so each one advances a distinct part of the claim, and use sources or historical context when they genuinely strengthen the reading. I also want to consider alternative interpretations instead of treating my own as the only possible one. Quevedo's poem is useful for that practice because its images and paradoxes invite more than one response. This essay represents an important step in learning to make a literary argument in Spanish: I selected evidence, connected form to meaning, and tried to guide an academic reader through my reasoning. I will build on that foundation by making my claims more precise and my Spanish more polished. I also want to keep improving my Spanish before law school so I can communicate clearly with Spanish-speaking people in my future legal work.</p></div></details>
+            </div>
           </article>
-          <article class="work-card" data-category="oral">
-            <div class="work-cover cover-2"><span class="cover-type">Expresión oral</span></div>
-            <div class="work-content"><h3>[Presentación oral]</h3><p>Presentación sobre [tema]. Aquí puedes enlazar una grabación o las diapositivas.</p><div class="work-meta"><span>[Mes · Año]</span><a href="#contacto">Ver proyecto ↗</a></div></div>
+          <article class="portfolio-section" id="investigacion">
+            <div class="portfolio-number">02</div>
+            <div class="portfolio-main">
+              <p class="kicker">Research paper</p>
+              <h3>Mixtec, Spanish, and English in a missionary context in California</h3>
+              <p class="portfolio-description">This SPAN 429 paper synthesizes sociolinguistic research and historical context to examine language contact, identity, and power in San José and Salinas.</p>
+              <div class="artifact-row"><span>SPAN 429R · April 2026</span><a class="button small" href="artifacts/span-429-mixteco-spanish-english.docx" download>Download paper ↓</a></div>
+              <details class="reflection"><summary>Read my reflection</summary><div class="reflection-copy"><p>I chose my SPAN 429 paper, “El Mixteco, el Español, y el Inglés en un Contexto Misionero en California,” for the research section because it brings together course concepts, published scholarship, and observations from my mission experience in San José and Salinas. Its central claim is that describing these communities simply as Spanish-speaking misses important differences in language, power, and belonging. The paper is organized by ideas: regional varieties, language contact, language ideologies and identity, and historical context. That organization let me connect multiple sources to a single question rather than presenting a sequence of unrelated summaries. I draw on work about code-switching, communicative competence, language contact, and migration history to interpret the situations I encountered. I selected it because it shows my effort to synthesize research and use it to understand a complex language environment.</p><p>Writing this paper helped me practice finding relationships among sources. Researchers such as Gumperz, Hymes, Zentella, and Thomason and Kaufman study different aspects of language, but their ideas can be put in conversation to explain why multilingual communication is patterned and socially meaningful. I also connected sociolinguistic frameworks to the history of Mexican migration and to the presence of Mixtec-speaking communities. That required me to introduce concepts in a way that supported my analysis and to give credit to the scholars whose work shaped it. I learned that synthesis is not just including many citations. It involves explaining how evidence from different sources contributes to the paper's purpose, where ideas overlap, and what each perspective helps a reader see.</p><p>The project also changed how I think about language learning and communication. Before, I was more likely to measure Spanish against a classroom standard. The experiences described in the paper pushed me to consider how language choices depend on community, audience, history, and power. In particular, the discussion of Mixtec-speaking residents helped me see why the phrase “Spanish-speaking community” can hide important distinctions. I had to consider the limits of my own perspective as a learner and missionary, and the difference between observing an interaction and fully understanding the experiences of the people involved. That reflection is part of the research process: my experience gives the paper a starting point, but it does not replace careful sourcing or justify broad conclusions about every speaker.</p><p>As a Spanish major at BYU, I have developed skills in connecting linguistic ideas to real contexts, organizing a longer research paper, and using sources to support an analysis. I have also gained a stronger awareness that Spanish is not a single uniform system and that language practices are connected to identity and social relationships. This artifact shows work I am proud of, while also giving me goals for improvement. In future research, I want to verify each source's details, check that every factual claim is supported by the most relevant evidence, and make the distinction between my observations and established research especially clear. I also want to strengthen transitions so readers can see why I move from one concept or historical point to the next.</p><p>I plan to continue developing these abilities through research that includes perspectives from the communities being discussed and through more careful attention to the limits of any one study or experience. I want to read scholarship in Spanish and English, compare how researchers frame the same issue, and keep improving my citation and source-integration skills. This paper represents an important stage in that development because it asks me to combine personal experience with academic research without treating them as interchangeable. It demonstrates how I can use multiple sources to build a connected interpretation, and it gives me a foundation for future work on multilingualism, language policy, and the social lives of Spanish and Indigenous languages. As I prepare for law school, I want to keep improving my Spanish so I can work more effectively with Spanish-speaking people.</p></div></details>
+            </div>
           </article>
-          <article class="work-card" data-category="cultura">
-            <div class="work-cover cover-3"><span class="cover-type">Cultura</span></div>
-            <div class="work-content"><h3>[Proyecto cultural]</h3><p>Una mirada a [lugar, tradición o tema] y por qué me pareció interesante.</p><div class="work-meta"><span>[Mes · Año]</span><a href="#contacto">Ver proyecto ↗</a></div></div>
-          </article>
-          <article class="work-card" data-category="escritura">
-            <div class="work-cover cover-4"><span class="cover-type">Escritura</span></div>
-            <div class="work-content"><h3>[Reflexión o ensayo]</h3><p>Un texto breve sobre una pregunta, lectura o experiencia del curso.</p><div class="work-meta"><span>[Mes · Año]</span><a href="#contacto">Ver proyecto ↗</a></div></div>
-          </article>
-          <article class="work-card" data-category="oral">
-            <div class="work-cover cover-5"><span class="cover-type">Expresión oral</span></div>
-            <div class="work-content"><h3>[Conversación o entrevista]</h3><p>Una actividad para practicar conversaciones reales y escuchar diferentes voces.</p><div class="work-meta"><span>[Mes · Año]</span><a href="#contacto">Ver proyecto ↗</a></div></div>
-          </article>
-          <article class="work-card" data-category="cultura">
-            <div class="work-cover cover-6"><span class="cover-type">Cultura</span></div>
-            <div class="work-content"><h3>[Lectura y respuesta]</h3><p>Una lectura que me hizo pensar y una respuesta a algunas de sus ideas.</p><div class="work-meta"><span>[Mes · Año]</span><a href="#contacto">Ver proyecto ↗</a></div></div>
+          <article class="portfolio-section" id="cultura">
+            <div class="portfolio-number">03</div>
+            <div class="portfolio-main">
+              <p class="kicker">Cultural experience</p>
+              <h3>Study abroad in Mexico: learning to write Maya characters</h3>
+              <p class="portfolio-description">This class project represents the message that James and Willow are married on August 22, according to the interpretation from class.</p>
+              <figure class="culture-artifact"><a href="artifacts/Mayan_wedding_date.jpg" target="_blank" rel="noopener"><img src="artifacts/Mayan_wedding_date.jpg" alt="A hand-drawn Maya writing class project with rows of glyph-like signs"></a><figcaption>Class project: “James and Willow are married on August 22.” <a href="artifacts/Mayan_wedding_date.jpg" download>Download image ↓</a></figcaption></figure>
+              <details class="reflection" open><summary>Reflection · 634 words</summary><div class="reflection-copy"><p>I chose this artifact because it connects my study abroad in Mexico with a class in which I learned about Maya writing. The image is a modern class project, not an ancient inscription. According to the interpretation from class, it communicates that James and Willow are married on August 22. I wanted to include it because it shows me trying to use a writing system I had previously encountered mainly as unfamiliar shapes. It also gave me a way to think about how names, relationships, and dates can be represented in writing. The project is personal in its message, but it also led me to ask broader questions about the history and cultural context of Maya writing.</p><p>The class helped me see that Maya hieroglyphs are not simply pictures that can be guessed at by looking. The Smithsonian National Museum of the American Indian describes the system as combining signs for whole words with signs for syllables, and notes that interpreting a sign depends on the language represented. That changed how I approached the page: each mark could have a linguistic role, and the arrangement mattered. Working through the assignment required close visual attention, patience, and a willingness to follow what we were taught instead of assuming I could read the symbols intuitively. I developed a better sense of how writing can combine visual design and language, and how learning even a small part of a script requires context and instruction.</p><p>The artifact also helped me consider what writing can do socially. Historical Maya inscriptions appear on monuments, buildings, ceramics, and books; they preserve dates and information about people and events. The British Museum's overview notes that some inscriptions record lineages and marriages as well as political events. My class project is not equivalent to those historical records, but its subject made that connection feel concrete: a written record can mark a relationship and place it in time. I also learned to distinguish the personal meaning of my assignment from the meanings of historical objects. I should not claim that my modern drawing reproduces an ancient Maya wedding inscription or that it represents every Maya community or language.</p><p>The historical context matters because Maya writing has not existed outside of political power. The Smithsonian explains that many Maya books were destroyed during the Spanish conquest, while surviving Maya communities continue to carry languages, traditions, and knowledge today. Reading about this history made me think about the difference between studying an ancient script and treating Maya culture as something that ended in the past. Maya people are living communities, not just subjects of archaeology. My time in Mexico gave me a setting in which to encounter this cultural material, but one class project cannot make me an expert or stand in for the perspectives of Maya people themselves. It can, however, encourage me to learn with more care and to recognize the histories behind the forms I study.</p><p>As a Spanish major at BYU, I developed skills in observing a visual text, attending to the relationship between a sign and its language, and placing a cultural artifact in historical context. I also practiced questioning my first impressions and separating what I learned in class from what I can independently claim about the script. I chose this piece because it represents a moment when language learning expanded beyond Spanish and helped me notice the complexity of Indigenous writing traditions in Mexico. I want to continue learning about Maya history and contemporary Maya communities, and to listen to scholars and community members whose expertise is grounded in those traditions. In future cultural work, I plan to identify the specific language and context involved, consult reliable sources, and explain the limits of my interpretation. This artifact reminds me that cultural understanding grows through study, humility, and continued engagement. Those habits also matter to my goal of improving my Spanish before law school so I can practice law with Spanish-speaking people.</p><p class="context-sources"><strong>Context sources:</strong> <a href="https://maya.nmai.si.edu/calendar/reading-calendar-glyphs" target="_blank" rel="noopener">Smithsonian NMAI, “Reading the Calendar Glyphs”</a>; <a href="https://maya.nmai.si.edu/maya" target="_blank" rel="noopener">Smithsonian NMAI, “The Maya”</a>; <a href="https://smarthistory.org/maya-glyphs-introduction/" target="_blank" rel="noopener">British Museum via Smarthistory, “Maya glyphs”</a>.</p></div></details>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="progreso">
-      <div class="wrap">
-        <div class="section-head">
-          <div><p class="kicker">Mirar hacia atrás y seguir adelante</p><h2 class="section-title">Mi progreso</h2></div>
-          <p class="section-intro">Un vistazo personal a las destrezas que estoy practicando y a las metas que me quedan.</p>
-        </div>
-        <div class="journey-grid">
-          <div class="journey-card">
-            <div class="journey-top"><div><h3>Lo que estoy practicando</h3><p>Actualiza las barras para reflejar tus metas o tu autoevaluación.</p></div><span class="round-icon">↗</span></div>
-            <div class="progress-list">
-              <div class="progress-item"><span>Conversación</span><div class="track"><div class="fill" style="width:68%"></div></div><span class="percent">68%</span></div>
-              <div class="progress-item"><span>Comprensión</span><div class="track"><div class="fill" style="width:76%"></div></div><span class="percent">76%</span></div>
-              <div class="progress-item"><span>Escritura</span><div class="track"><div class="fill" style="width:61%"></div></div><span class="percent">61%</span></div>
-              <div class="progress-item"><span>Vocabulario</span><div class="track"><div class="fill" style="width:72%"></div></div><span class="percent">72%</span></div>
-            </div>
-          </div>
-          <div class="quote">
-            <div class="quote-mark">“</div>
-            <blockquote>[Escribe aquí una reflexión personal sobre lo que has aprendido, lo que te costó o aquello de lo que te sientes orgulloso.]</blockquote>
-            <cite>— Una reflexión de este semestre</cite>
-          </div>
-        </div>
+    <section class="section portfolio-note" id="progreso">
+      <div class="wrap note-inner">
+        <p class="kicker">Mi aprendizaje</p>
+        <h2 class="section-title">Tres áreas, una trayectoria</h2>
+        <p>Estos trabajos muestran cómo sigo desarrollando mis habilidades de argumentación, investigación y análisis cultural como estudiante de español en BYU.</p>
+        <a class="button secondary" href="#argumento">Volver a las secciones ↑</a>
       </div>
     </section>
 
@@ -295,7 +407,7 @@
       </div>
     </section>
   </main>
-  <footer><div class="wrap footer-inner"><a href="#inicio"><strong>Mi portafolio de español ↑</strong></a><span>Hecho por [Tu nombre] · [Año]</span></div></footer>
+  <footer><div class="wrap footer-inner"><a href="#inicio"><strong>Mi portafolio de español ↑</strong></a><span>Hecho por James Call &nbsp; <span class="retro-badge">BEST VIEWED IN A BROWSER · 1998</span></span></div></footer>
   <script>
     const filters = document.querySelectorAll('.filter');
     const cards = document.querySelectorAll('.work-card');
